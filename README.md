@@ -32,11 +32,11 @@ The following features are currently available for testing:
    * Test Criteria:
    * When hungry, pet moves slowly
    * When content, pet moves quickly
-* Food Addition
+* Food Addition (Now known as Buddy Feeding)
    * Test Criteria:
 1. Tap central candy icon
-2. Candy total increases by 1
-3. Multiple taps continue to produce candy
+2. 1 Candy is fed to pet, level meter goes up
+3. Multiple taps continue to feed candy
 * Extra Food Makers
    * Test Criteria:
 1. Buy candy maker in shop menu (shopping cart button)
