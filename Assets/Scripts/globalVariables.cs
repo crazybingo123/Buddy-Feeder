@@ -1,28 +1,52 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class globalVariables
 {
+    private static Scene currentScene;
     private static int units;
-    private static int perSec;
-    private static int help;
-    private static int planets;
     private static int chefs;
+    private static int chefCost;
     private static int factories;
-    private static bool sub3;
+    private static int factCost;
+    private static int planets;
+    private static int planetCost;
+    private static int perSec;
+    private static int click;
+    private static int help;
+    private static int buddyBelly;
+    private static int buddyLevel;
+    private static int narState;
+
+    private static bool subGraphicsSettings;
+    private static bool subGraphicsShop;
+    private static bool subGraphicsCandy;
+    private static bool subGraphicsHelpers;
+    private static bool subGraphicsBackground;
+    private static bool subGraphicsNarrative;
+    private static bool subGraphicsBuddy;
+    private static bool subGraphicsLvlbar;
     private static bool subTake;
     private static bool subAll;
+    private static bool endGame;
+    private static bool deadGame;
     private static bool appPaused;
-    private static int click;
+    private static bool hasQuit;
+
+    public static bool canHold;
     public static bool sfxMute;
     public static bool musicMute;
     public static bool sad;
     public static bool musicChange;
     public static bool sfxChange;
+
     private static float musicVol;
     private static float sfxVol;
-    private static int timesQuit;
+    private static float timeSpent;
+
 
     public static int Units
     {
@@ -34,6 +58,32 @@ public static class globalVariables
         set
         {
             units = value;
+        }
+    }
+
+    public static int NarState
+    {
+        get
+        {
+            return narState;
+        }
+
+        set
+        {
+            narState = value;
+        }
+    }
+
+    public static Scene CurrentScene
+    {
+        get
+        {
+            return currentScene;
+        }
+
+        set
+        {
+            currentScene = value;
         }
     }
 
@@ -50,6 +100,19 @@ public static class globalVariables
         }
     }
 
+    public static int PlanetCost
+    {
+        get
+        {
+            return planetCost;
+        }
+
+        set
+        {
+            planetCost = value;
+        }
+    }
+
     public static int Chefs
     {
         get
@@ -60,6 +123,19 @@ public static class globalVariables
         set
         {
             chefs = value;
+        }
+    }
+
+    public static int ChefCost
+    {
+        get
+        {
+            return chefCost;
+        }
+
+        set
+        {
+            chefCost = value;
         }
     }
 
@@ -76,16 +152,121 @@ public static class globalVariables
         }
     }
 
-    public static bool Sub3
+    public static int FactCost
     {
         get
         {
-            return sub3;
+            return factCost;
         }
 
         set
         {
-            sub3 = value;
+            factCost = value;
+        }
+    }
+
+    public static bool SubGraphicsSettings
+    {
+        get
+        {
+            return subGraphicsSettings;
+        }
+
+        set
+        {
+            subGraphicsSettings = value;
+        }
+    }
+
+    public static bool SubGraphicsShop
+    {
+        get
+        {
+            return subGraphicsShop;
+        }
+
+        set
+        {
+            subGraphicsShop = value;
+        }
+    }
+
+    public static bool SubGraphicsHelpers
+    {
+        get
+        {
+            return subGraphicsHelpers;
+        }
+
+        set
+        {
+            subGraphicsHelpers = value;
+        }
+    }
+
+    public static bool SubGraphicsCandy
+    {
+        get
+        {
+            return subGraphicsCandy;
+        }
+
+        set
+        {
+            subGraphicsCandy = value;
+        }
+    }
+
+    public static bool SubGraphicsBackground
+    {
+        get
+        {
+            return subGraphicsBackground;
+        }
+
+        set
+        {
+            subGraphicsBackground = value;
+        }
+    }
+
+    public static bool SubGraphicsBuddy
+    {
+        get
+        {
+            return subGraphicsBuddy;
+        }
+
+        set
+        {
+            subGraphicsBuddy = value;
+        }
+    }
+
+    public static bool SubGraphicsLvlbar
+    {
+        get
+        {
+            return subGraphicsLvlbar;
+        }
+
+        set
+        {
+            subGraphicsLvlbar = value;
+        }
+    }
+
+
+    public static bool SubGraphicsNarrative
+    {
+        get
+        {
+            return subGraphicsNarrative;
+        }
+
+        set
+        {
+            subGraphicsNarrative = value;
         }
     }
 
@@ -125,6 +306,45 @@ public static class globalVariables
         set
         {
             appPaused = value;
+        }
+    }
+
+    public static bool EndGame
+    {
+        get
+        {
+            return endGame;
+        }
+
+        set
+        {
+            endGame = value;
+        }
+    }
+
+    public static bool DeadGame
+    {
+        get
+        {
+            return deadGame;
+        }
+
+        set
+        {
+            deadGame = value;
+        }
+    }
+
+    public static bool HasQuit
+    {
+        get
+        {
+            return hasQuit;
+        }
+
+        set
+        {
+            hasQuit = value;
         }
     }
 
@@ -193,16 +413,42 @@ public static class globalVariables
         }
     }
 
-    public static int TimesQuit
+    public static float TimeSpent
     {
         get
         {
-            return timesQuit;
+            return timeSpent;
         }
 
         set
         {
-            timesQuit = value;
+            timeSpent = value;
+        }
+    }
+
+    public static int BuddyLevel
+    {
+        get
+        {
+            return buddyLevel;
+        }
+
+        set
+        {
+            buddyLevel = value;
+        }
+    }
+
+    public static int BuddyBelly
+    {
+        get
+        {
+            return buddyBelly;
+        }
+
+        set
+        {
+            buddyBelly = value;
         }
     }
 }

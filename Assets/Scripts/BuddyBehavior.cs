@@ -1,16 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuddyBehavior : MonoBehaviour
 {
     private int oldUnits = 0;
     private int oldClick = 0;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("checkAction", 0.0f, 3f);
+        oldUnits = globalVariables.Units;
+        oldClick = globalVariables.Click;
+        InvokeRepeating("CheckEmotion", 0.0f, 5f);
     }
 
     // Update is called once per frame
@@ -18,11 +23,9 @@ public class BuddyBehavior : MonoBehaviour
     {
 
     }
-
-    void checkAction()
+    void CheckEmotion()
     {
-
-        if (globalVariables.Units == oldUnits || globalVariables.Click == oldClick || globalVariables.Units == 0)
+        if (globalVariables.Units == oldUnits || globalVariables.Click == oldClick)
         {
             globalVariables.sad = true;
         }

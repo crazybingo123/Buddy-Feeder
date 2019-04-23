@@ -11,9 +11,12 @@ public class musicCtrl : MonoBehaviour
         audSource = GetComponent<AudioSource>();
     }
 
-    private void Update()
-    {
-        
+    void Update()
+    { 
+        if (globalVariables.EndGame)
+        {
+            audSource.mute = true;
+        }
     }
     void Awake()
     {

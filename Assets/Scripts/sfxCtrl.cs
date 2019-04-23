@@ -17,8 +17,5 @@ public class sfxCtrl : MonoBehaviour
         }
     }
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
+    
 }

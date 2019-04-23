@@ -25,8 +25,11 @@ public class incControl : MonoBehaviour
 
     void HelpInc()
     {
-        globalVariables.Units += globalVariables.Chefs * 1;
-        globalVariables.Units += globalVariables.Factories * 10;
-        globalVariables.Units += globalVariables.Planets * 100;
+        if (!globalVariables.EndGame)
+        {
+            globalVariables.Units += globalVariables.Chefs * 1;
+            globalVariables.Units += globalVariables.Factories * 10;
+            globalVariables.Units += globalVariables.Planets * 100;
+        }
     }
 }

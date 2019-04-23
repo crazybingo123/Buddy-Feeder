@@ -7,6 +7,9 @@ public class menuCtrl : MonoBehaviour
 {
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        if (!globalVariables.EndGame)
+        {
+            SceneManager.LoadScene(sceneName);
+        }       
     }
 }

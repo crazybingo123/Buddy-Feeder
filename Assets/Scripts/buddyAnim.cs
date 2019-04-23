@@ -5,6 +5,7 @@ using UnityEngine;
 public class buddyAnim : MonoBehaviour
 {
     private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,13 +15,7 @@ public class buddyAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (globalVariables.sad)
-        {
-            anim.SetBool("isSad", true);
-        }
-        else
-        {
-            anim.SetBool("isSad", false);
-        }
+        anim.SetBool("isSad", globalVariables.sad);
+        anim.SetInteger("BuddyLevel", globalVariables.BuddyLevel);
     }
 }

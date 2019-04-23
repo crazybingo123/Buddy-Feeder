@@ -9,6 +9,7 @@ TagManager:
   - sfxSource
   - scripts
   - scriptsMain
+  - chefOwned
   layers:
   - Default
   - TransparentFX

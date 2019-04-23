@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class helpDisplayCtrl : MonoBehaviour
 {
-    private Text produce; 
+    private Text produce;
     private Text chefCount;
     private Text factoryCount;
     private Text planetCount;
@@ -19,18 +19,15 @@ public class helpDisplayCtrl : MonoBehaviour
         planetCount = GameObject.Find("planetCnt").GetComponent<Text>();
     }
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this);
-    }
-
     // Update is called once per frame
     void Update()
     {
-       produce.text = "Helpers producing " + globalVariables.PerSec+ " per Sec.";
-       chefCount.text = "= " + globalVariables.Chefs;
-       factoryCount.text = "= " + globalVariables.Factories;
-       planetCount.text = "= " + globalVariables.Planets;
-
+        if (!globalVariables.DeadGame || !globalVariables.HasQuit)
+        {
+            produce.text = "Helpers producing " + globalVariables.PerSec + " per Sec.";
+            chefCount.text = "= " + globalVariables.Chefs;
+            factoryCount.text = "= " + globalVariables.Factories;
+            planetCount.text = "= " + globalVariables.Planets;
+        } 
     }
 }
